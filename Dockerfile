@@ -2,7 +2,8 @@ FROM webdevops/php-nginx:7.3
 MAINTAINER timscidev@gmail.com
 
 ENV WEB_DOCUMENT_ROOT=/app/public \
-    APP_ENV=devel \
+    APP_ENV=production \
+    APP_DEBUG="false" \
     APP_KEY="00000000000000000000000000000000" \
     DB_CONNECTION=mysql \
     DB_HOST=db \
