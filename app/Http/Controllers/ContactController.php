@@ -13,11 +13,14 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $contacts = Contact::paginate(2);
+        $per_page = $request->get("per_page", 10);
+        $per_page = intval($per_page);
 
-        return view('pages.index', compact("contacts"));
+        $contacts = Contact::paginate($per_page);
+
+        return view('pages.index', compact("contacts", "per_page"));
     }
 
     /**

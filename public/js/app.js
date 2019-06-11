@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $('#per_page').change(function () {
+        window.location.replace(window.location.pathname + "?per_page=" + $(this).val());
+    });
+
     $('.date').change(updateBirthday).keyup(updateBirthday);
     $('#delete').click(function (e) {
         e.preventDefault();

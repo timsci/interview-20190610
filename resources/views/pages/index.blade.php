@@ -35,5 +35,18 @@
         </tbody>
     </table>
 
-    {{ $contacts->links() }}
+    <div class="row">
+        <div class="col">
+            {{ $contacts->links() }}
+        </div>
+        <div class="col text-right">
+            Results Per Page: &nbsp;
+            <select id="per_page" class="custom-select" style="width:auto;">
+                @foreach ([10,25,50] as $option)
+                    <option {{ $option === $per_page ? "selected" : "" }}>{{ $option }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
 @endsection
