@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Redirect::route("contacts.index");
 });
+
+Route::resource('contacts', 'ContactController');
