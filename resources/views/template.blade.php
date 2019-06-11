@@ -12,6 +12,7 @@
 <body>
 <div class="container">
     <h1>Contacts - @yield('title')</h1>
+    <hr/>
     @yield('content')
 
     <script src="/vendor/jquery/jquery.min.js"></script>
