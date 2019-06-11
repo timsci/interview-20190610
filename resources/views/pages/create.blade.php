@@ -3,6 +3,13 @@
 @section('title', "Create")
 
 @section('content')
+    <p>
+        <a href="{{ route("contacts.index") }}" class="btn btn-secondary">
+            <i class="fas fa-reply"></i>
+            Back to List
+        </a>
+    </p>
+
     <form action="{{ route("contacts.store") }}" method="POST">
         {{ csrf_field() }}
         <div class="row">
@@ -123,7 +130,10 @@
 
 
         <p>
-            <button type="submit" class="btn btn-primary">Create Contact</button>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i>
+                Create Contact
+            </button>
         </p>
     </form>
 @endsection

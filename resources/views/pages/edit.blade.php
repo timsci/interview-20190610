@@ -3,6 +3,13 @@
 @section('title', "Edit")
 
 @section('content')
+    <p>
+        <a href="{{ route("contacts.index") }}" class="btn btn-secondary">
+            <i class="fas fa-reply"></i>
+            Back to List
+        </a>
+    </p>
+
     <form action="{{ route("contacts.update", $contact) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field("PUT") }}
@@ -128,8 +135,15 @@
 
 
         <p>
-            <button type="submit" class="btn btn-primary">Edit Contact</button>
-            <a href="" class="btn btn-danger" id="delete">Delete Contact</a>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user"></i>
+                Edit Contact
+            </button>
+            &nbsp;
+            <a href="" class="btn btn-danger" id="delete">
+                <i class="fas fa-user-slash"></i>
+                Delete Contact
+            </a>
         </p>
     </form>
 
