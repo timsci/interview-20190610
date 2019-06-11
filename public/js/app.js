@@ -1,6 +1,14 @@
 $(document).ready(function () {
     $('#per_page').change(function () {
-        window.location.replace(window.location.pathname + "?per_page=" + $(this).val());
+        let sort = $('#sort').val(),
+            order = $('#order').val();
+
+        window.location.replace(
+            window.location.pathname + "?"
+            + "sort=" + sort + "&"
+            + "order=" + order + "&"
+            + "per_page=" + $(this).val()
+        );
     });
 
     $('.date').change(updateBirthday).keyup(updateBirthday);

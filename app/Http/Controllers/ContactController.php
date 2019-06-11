@@ -17,10 +17,14 @@ class ContactController extends Controller
     {
         $per_page = $request->get("per_page", 10);
         $per_page = intval($per_page);
+        $sort = $request->get("sort", "id");
+        if (!in_array($sort, ["id", "first_name", "last_name", "email", "phone", "birthday"])) $sort = "id";
+        $order = $request->get("order", "asc");
+        if (!in_array($order, ["asc", "desc"])) $order = "asc";
 
-        $contacts = Contact::paginate($per_page);
+        $contacts = Contact::query()->orderBy($sort, $order)->paginate($per_page);
 
-        return view('pages.index', compact("contacts", "per_page"));
+        return view('pages.index', compact("contacts", "per_page", "sort", "order"));
     }
 
     /**
