@@ -3,8 +3,9 @@
 @section('title', "Edit")
 
 @section('content')
-    <form action="{{ route("contacts.store") }}" method="POST">
+    <form action="{{ route("contacts.update", $contact) }}" method="POST">
         {{ csrf_field() }}
+        {{ method_field("PUT") }}
         <div class="row">
             <div class="col">
                 <div class="form-group">
