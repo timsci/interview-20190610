@@ -3,6 +3,13 @@
 @section('title', "List")
 
 @section('content')
+    <p class="text-right">
+        <a href="{{ route("contacts.create") }}" class="btn btn-primary">
+            <i class="fas fa-user-plus"></i>
+            New Contact
+        </a>
+    </p>
+
     <table class="table table-bordered table-hover table-striped">
         <thead>
         <tr>
@@ -28,11 +35,5 @@
         </tbody>
     </table>
 
-
-    <div>
-        <a href="{{ route("contacts.create") }}" class="btn btn-primary">
-            <i class="fas fa-user-plus"></i>
-            New Contact
-        </a>
-    </div>
+    {{ $contacts->links() }}
 @endsection
