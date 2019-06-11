@@ -129,6 +129,12 @@
 
         <p>
             <button type="submit" class="btn btn-primary">Edit Contact</button>
+            <a href="" class="btn btn-danger" id="delete">Delete Contact</a>
         </p>
+    </form>
+
+    <form action="{{ route("contacts.destroy", $contact) }}" method="POST" id="delete_form" style="display:none;">
+        {{ csrf_field() }}
+        {{ method_field("DELETE") }}
     </form>
 @endsection

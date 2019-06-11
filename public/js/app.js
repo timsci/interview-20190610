@@ -1,5 +1,12 @@
 $(document).ready(function () {
     $('.date').change(updateBirthday).keyup(updateBirthday);
+    $('#delete').click(function (e) {
+        e.preventDefault();
+
+        if (confirm("Are you sure?")) {
+            $('#delete_form').submit();
+        }
+    });
 
     function updateBirthday() {
         let month = $('#birthday_month').val(),
